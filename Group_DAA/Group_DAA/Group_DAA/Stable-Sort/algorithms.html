@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sorting Algorithms – Steps</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: #22d3ee;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            color: #000;
+        }
+
+        .btn:hover {
+            background: #38bdf8;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #38bdf8;
+        }
+
+        .algo {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .algo h2 {
+            color: #22d3ee;
+            cursor: pointer;
+        }
+
+        .content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .pseudo {
+            background: rgba(0,0,0,0.4);
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <button class="btn" onclick="goBack()">⬅ Back</button>
+    </div>
+
+    <h1>Sorting Algorithms – Step by Step</h1>
+
+    <!-- BUBBLE SORT -->
+    <div class="algo">
+        <h2 onclick="toggle(this)">Bubble Sort</h2>
+        <div class="content">
+            <ol>
+                <li>Compare adjacent elements</li>
+                <li>Swap if left element is greater</li>
+                <li>Largest element moves to the end</li>
+                <li>Repeat for remaining elements</li>
+            </ol>
+
+            <table>
+                <tr><th>Best</th><th>Average</th><th>Worst</th><th>Space</th></tr>
+                <tr><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td></tr>
+            </table>
+
+            <!-- UPDATED LOGIC -->
+            <div class="pseudo">
+                compare arr[i] and arr[i+1]<br>
+                if arr[i] &gt; arr[i+1] then swap<br>
+                move largest element to end<br>
+                repeat passes until sorted
+            </div>
+        </div>
+    </div>
+
+    <!-- INSERTION SORT -->
+    <div class="algo">
+        <h2 onclick="toggle(this)">Insertion Sort</h2>
+        <div class="content">
+            <ol>
+                <li>Assume first element is sorted</li>
+                <li>Pick next element</li>
+                <li>Shift larger elements</li>
+                <li>Insert element at correct position</li>
+            </ol>
+
+            <table>
+                <tr><th>Best</th><th>Average</th><th>Worst</th><th>Space</th></tr>
+                <tr><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>O(1)</td></tr>
+            </table>
+
+            <!-- UPDATED LOGIC -->
+            <div class="pseudo">
+                take first element as sorted<br>
+                pick next element<br>
+                shift elements greater than key<br>
+                insert key at correct position
+            </div>
+        </div>
+    </div>
+
+    <!-- MERGE SORT -->
+    <div class="algo">
+        <h2 onclick="toggle(this)">Merge Sort</h2>
+        <div class="content">
+            <ol>
+                <li>Divide array into halves</li>
+                <li>Recursively sort halves</li>
+                <li>Merge sorted halves</li>
+            </ol>
+
+            <table>
+                <tr><th>Best</th><th>Average</th><th>Worst</th><th>Space</th></tr>
+                <tr><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n)</td></tr>
+            </table>
+
+            <!-- UPDATED LOGIC -->
+            <div class="pseudo">
+                divide array into halves<br>
+                sort left half<br>
+                sort right half<br>
+                merge two sorted halves
+            </div>
+        </div>
+    </div>
+
+    <!-- COUNTING SORT -->
+    <div class="algo">
+        <h2 onclick="toggle(this)">Counting Sort</h2>
+        <div class="content">
+            <ol>
+                <li>Find maximum and minimum values</li>
+                <li>Count frequency</li>
+                <li>Prefix sum</li>
+                <li>Build output array</li>
+            </ol>
+
+            <table>
+                <tr><th>Best</th><th>Average</th><th>Worst</th><th>Space</th></tr>
+                <tr><td>O(n+k)</td><td>O(n+k)</td><td>O(n+k)</td><td>O(k)</td></tr>
+            </table>
+
+            <!-- UPDATED LOGIC (YOUR STYLE) -->
+            <div class="pseudo">
+                count[arr[i]]++<br>
+                prefix sum<br>
+                build output array<br>
+                copy output to original array
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "index.html";
+        }
+
+        function toggle(el) {
+            const content = el.nextElementSibling;
+            content.style.display =
+                content.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
